@@ -120,7 +120,7 @@ export class Home implements AfterViewInit {
 
   downloadResume() {
     const link = document.createElement('a');
-    link.href = 'assets/resume/Harish_Veluru_Resume.pdf';
+    link.href = 'assets/resume/Veluru Harish_7036791995.pdf';
     link.download = 'Harish_Veluru_Resume.pdf';
     link.click();
     this.showToastMessage(

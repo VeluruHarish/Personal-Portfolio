@@ -9,7 +9,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
   styleUrl: './header.scss',
 })
 export class Header implements OnInit {
-  isDarkMode: boolean = false;
+  isDarkMode: boolean = true;
   @Input() activeSection!: string;
   @Output() navigate = new EventEmitter<string>();
   isMenuOpen = false;
