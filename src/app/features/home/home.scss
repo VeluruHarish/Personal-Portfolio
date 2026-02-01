@@ -365,10 +365,10 @@
 
     .right-side {
       .orbit-viewport {
-        height: 320px;
+        height: 350px;
         width: 100%;
         --base-size: 270px;
-        overflow: visible;
+        overflow: hidden;
       }
 
       .icon-wrapper {
