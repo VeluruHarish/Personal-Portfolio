@@ -1,0 +1,36 @@
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo" class="logo-image" />
+            <div class="title">
+                <span class="logo-text">Harish Veluru</span>
+                <span class="logo-subtext">Full Stack Developer</span>
+            </div>
+        </div>
+
+        <nav class="navbar" [class.open]="isMenuOpen">
+            <a class="nav-link" [class.active]="activeSection === 'home'" (click)="onNavClick('home')">Home</a>
+            <a class="nav-link" [class.active]="activeSection === 'about'" (click)="onNavClick('about')">About</a>
+            <a class="nav-link" [class.active]="activeSection === 'skills'" (click)="onNavClick('skills')">Skills</a>
+            <a class="nav-link" [class.active]="activeSection === 'projects'" (click)="onNavClick('projects')">Projects</a>
+            <a class="nav-link" [class.active]="activeSection === 'experience'" (click)="onNavClick('experience')">Experience</a>
+            <a class="nav-link" [class.active]="activeSection === 'contact'" (click)="onNavClick('contact')">Contact</a>
+        </nav>
+
+        <button class="menu-toggle" (click)="toggleMenu()" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <div class="theme">
+            <button class="theme-toggle" (click)="toggleDarkMode()"
+                [attr.title]="isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'"
+                [attr.aria-label]="isDarkMode ? 'Light Mode' : 'Dark Mode'">
+                <i [class]="isDarkMode ? 'fas fa-sun' : 'fas fa-moon'" class="toggle-icon"></i>
+            </button>
+            <span class="text">Theme</span>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,12 @@
+<div class="expertise-section">
+  <h2 class="title">Expertise</h2>
+  <p class="subtitle">Turning Ideas into Impact with These Skills.</p>
+
+  <div class="expertise-grid">
+    <div class="expertise-card" *ngFor="let skill of skills">
+      <img [src]="skill.icon" [alt]="skill.name" />
+      <h3>{{ skill.name }}</h3>
+      <p>{{ skill.desc }}</p>
+    </div>
+  </div>
+</div>

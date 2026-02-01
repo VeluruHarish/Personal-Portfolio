@@ -1,0 +1,136 @@
+<section id="contact" class="contact-section">
+    <h2 class="title">Contact Me</h2>
+    <p class="subtitle">
+        Have a question or want to work together? Feel free to reach out!
+    </p>
+
+    <div class="contact-details">
+        <a href="tel:7036791995" class="contact-item">
+            <span class="icon">📞</span>
+            <span class="text">+91 7036791995</span>
+        </a>
+
+        <a href="mailto:veluruharish4503@gmail.com" class="contact-item">
+            <span class="icon">📩</span>
+            <span class="text">veluruharish4503@gmail.com</span>
+        </a>
+
+        <div class="contact-item">
+            <span class="icon">📍</span>
+            <span class="text">Bengaluru, India</span>
+        </div>
+    </div>
+
+    <form class="contact-card" [formGroup]="contactForm">
+        <div class="input-group">
+            <span class="input-icon">
+                <!-- User Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v3h20v-3c0-3.3-6.7-5-10-5z" />
+                </svg>
+            </span>
+            <input type="text" placeholder="Your Name" formControlName="name" />
+        </div>
+
+        <!-- Email -->
+        <div class="input-group">
+            <span class="input-icon">
+                <!-- Mail Icon -->
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+            </span>
+            <input type="email" placeholder="Your Email" formControlName="email" />
+        </div>
+
+        <!-- Message -->
+        <div class="input-group textarea">
+            <span class="input-icon">
+                <!-- Message Icon -->
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v10c0 1.1-.9 2-2 2H7l-3 3v-3H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                </svg>
+
+            </span>
+            <textarea rows="4" placeholder="Your Message" formControlName="message"></textarea>
+        </div>
+
+        <!-- Button -->
+        <!--  <button type="button" (click)="sendMessage()" [disabled]="contactForm.invalid">
+            Send Message
+            <span class="send-icon">📤</span>
+        </button> -->
+        <button type="button" (click)="sendMessage()" [disabled]="isSending || contactForm.invalid">
+            {{ isSending ? 'Sending…' : 'Send Message 📤' }}
+        </button>
+    </form>
+
+    <p class="thank-you">
+        Thank you for visiting my portfolio 🙏
+    </p>
+
+    <div class="toast" *ngIf="showToast" [ngClass]="toastType">
+        <span class="icon" *ngIf="toastType === 'success'">
+            <!-- Success Tick SVG -->
+            <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </span>
+
+        <span class="icon" *ngIf="toastType === 'error'">
+            <!-- Error Cross SVG -->
+            <svg viewBox="0 0 24 24" width="18" height="18">
+                <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </span>
+
+        <span class="message">{{ toastMessage }}</span>
+    </div>
+
+
+    <div class="social-links">
+        <div class="toast" *ngIf="showToast" [ngClass]="toastType">
+            <span class="icon" *ngIf="toastType === 'success'">
+                <!-- Success Tick SVG -->
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M5 13l4 4L19 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </span>
+
+            <span class="icon" *ngIf="toastType === 'error'">
+                <!-- Error Cross SVG -->
+                <svg viewBox="0 0 24 24" width="18" height="18">
+                    <path d="M6 6l12 12M6 18L18 6" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </span>
+
+            <span class="message">{{ toastMessage }}</span>
+        </div>
+
+        <a href="#" class="social-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="#" class="social-icon" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="#" class="social-icon" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" class="social-icon" title="Portfolio">
+            <i class="fas fa-code"></i>
+        </a>
+    </div>
+
+    <footer class="footer">
+        © 2026 Harish. All rights reserved.&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Designed & Developed by Harish Veluru.
+    </footer>
+</section>

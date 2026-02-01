@@ -1,0 +1,222 @@
+.container {
+    padding-top: 4rem;
+    display: flex;
+
+    .left-side {
+        height: 90vh;
+        width: 50vw;
+        position: relative;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+        .profile-image {
+            height: 70vh;
+            width: 35vw;
+            border-radius: 50%;
+        }
+    }
+
+    .right-side {
+        &.about-card {
+            width: 50vw;
+
+            .about-title {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 30px;
+                letter-spacing: 2px;
+                color: var(--link-hover-color);
+                margin-bottom: 18px;
+            }
+
+            .about-title .icon {
+                font-size: 30px;
+            }
+
+            .about-desc {
+                position: relative;
+
+                font-size: 15px;
+                line-height: 1.75;
+                color: var(--text-color);
+
+                padding: 1.6rem 1.8rem;
+                margin-bottom: 24px;
+
+                /* Card background */
+                background: linear-gradient(145deg,
+                        rgba(255, 255, 255, 0.09),
+                        rgba(255, 255, 255, 0.02));
+
+                border-radius: 18px;
+
+                /* Soft depth */
+                box-shadow:
+                    0 10px 30px rgba(0, 0, 0, 0.35),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+                /* Glass effect */
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+
+                transition: all 0.35s ease;
+                margin: 1rem;
+            }
+
+            .about-desc::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                border-radius: 18px;
+                padding: 1px;
+
+                background: linear-gradient(90deg,
+                        #22d3ee,
+                        #8b5cf6,
+                        #ec4899);
+
+                -webkit-mask:
+                    linear-gradient(#000 0 0) content-box,
+                    linear-gradient(#000 0 0);
+                -webkit-mask-composite: xor;
+                mask-composite: exclude;
+
+                pointer-events: none;
+                opacity: 0.8;
+            }
+
+            .about-desc:hover {
+                transform: translateY(-5px);
+                box-shadow:
+                    0 16px 45px rgba(0, 0, 0, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+            }
+
+
+
+            .about-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .about-list li {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-size: 15px;
+                margin-bottom: 14px;
+                color: var(--text-color);
+            }
+
+            .about-list:hover {
+                width: 47vw;
+                margin: 1rem;
+                transform: translateY(-5px);
+                box-shadow:
+                    0 16px 45px rgba(0, 0, 0, 0.5),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+            }
+
+            .check-icon {
+                color: var(--text-color);
+                font-size: 14px;
+                padding: 6px;
+                border-radius: 50%;
+            }
+
+
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding-top: 1.5rem;
+        width: 100%;
+
+        .left-side {
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+        }
+
+        .right-side {
+            padding: 0 1rem;
+
+            &.about-card {
+                .about-title {
+                    font-size: 20px;
+                    letter-spacing: 1px;
+                }
+
+                .about-desc {
+                    font-size: 13.5px;
+                    line-height: 1.6;
+                    padding: 1.2rem;
+                }
+
+                .about-list li {
+                    font-size: 13.5px;
+                    gap: 10px;
+                }
+
+                .check-icon {
+                    font-size: 12px;
+                    padding: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding-top: 2rem;
+
+        .left-side {
+            width: 100%;
+            height: auto;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+
+            .profile-image {
+                width: 240px;
+                height: 240px;
+            }
+        }
+
+        .right-side {
+            padding: 0 1.5rem;
+            width: auto !important;
+
+            &.about-card {
+                .about-title {
+                    font-size: 24px;
+                }
+
+                .about-desc {
+                    font-size: 14px;
+                    padding: 1.4rem;
+                    margin: 0 0 1.5rem;
+                }
+
+                .about-list li {
+                    font-size: 14px;
+                }
+
+                /* Disable hover-only card jump on touch */
+                .about-desc:hover,
+                .about-list:hover {
+                    transform: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+}

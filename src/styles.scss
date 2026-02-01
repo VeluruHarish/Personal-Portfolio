@@ -1,0 +1,20 @@
+/* Import theme variables and styles */
+@import './styles/theme';
+
+/* Additional global styles */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Smooth transitions for theme switching */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,90 @@
+.expertise-section {
+    padding: 55px 5%;
+    text-align: center;
+
+    .title {
+        font-size: clamp(28px, 4vw, 40px);
+        font-weight: 700;
+        color: var(--link-hover-color);
+        margin: 0;
+    }
+
+    .subtitle {
+        color: var(--text-color);
+        font-size: 20px;
+    }
+
+    /* GRID */
+    .expertise-grid {
+        margin-top: 40px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 40px;
+    }
+
+    /* CARD */
+    .expertise-card {
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.02));
+        border-radius: 16px;
+        padding: 30px 20px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        border-radius: 18px;
+
+        /* Soft depth */
+        box-shadow:
+            0 10px 30px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.08);
+        /* Glass effect */
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+        transition: all 0.35s ease;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* Glow Border */
+    .expertise-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 1px;
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    .expertise-card:hover::before {
+        opacity: 1
+    }
+
+    .expertise-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(113, 57, 209, 0.25);
+
+        background: linear-gradient(135deg,
+                rgba(124, 58, 237, 0.08),
+                rgba(56, 189, 248, 0.06));
+    }
+
+
+    /* ICON */
+    .expertise-card img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 20px;
+    }
+
+    /* TEXT */
+    .expertise-card h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .expertise-card p {
+        font-size: 15px;
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+}

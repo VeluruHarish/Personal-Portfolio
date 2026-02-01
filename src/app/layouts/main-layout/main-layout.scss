@@ -1,0 +1,19 @@
+main.content {
+  min-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  min-height: calc(100vh - 3rem);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  section {
+    min-height: calc(100vh - 10rem);
+  }
+  
+}

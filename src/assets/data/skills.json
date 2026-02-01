@@ -1,0 +1,11 @@
+{
+  "radius": 180,
+  "icons": [
+    { "name": "Angular", "icon": "assets/icons/angular.svg" },
+    { "name": "JavaScript", "icon": "assets/icons/java-script.svg" },
+    { "name": "HTML", "icon": "assets/icons/HTML5.svg" },
+    { "name": "CSS", "icon": "assets/icons/css.svg" },
+    { "name": "Node.js", "icon": "assets/icons/aws.svg" },
+    { "name": "Git", "icon": "assets/icons/azure.svg" }
+  ]
+}
