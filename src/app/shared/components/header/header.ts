@@ -17,11 +17,15 @@ export class Header implements OnInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
 
   ngOnInit() {
-    // Only run on browser, not on server
     if (isPlatformBrowser(this.platformId)) {
-      // Load saved theme preference from localStorage
       const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
+
+      if (!savedTheme) {
+        // first visit → default dark
+        this.isDarkMode = true;
+        localStorage.setItem('theme', 'dark');
+        this.applyTheme('dark');
+      } else if (savedTheme === 'dark') {
         this.isDarkMode = true;
         this.applyTheme('dark');
       } else {
@@ -30,6 +34,7 @@ export class Header implements OnInit {
       }
     }
   }
+
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
